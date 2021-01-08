@@ -13,6 +13,13 @@ export interface Sneaker {
     already_buy: boolean
 }
 
+export interface Size {
+    _id: string
+    us: string,
+    eu: string,
+    uk: string
+}
+
 export interface Props {
     onClose: () => void,
     defaultValues?: Sneaker

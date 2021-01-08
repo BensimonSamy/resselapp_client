@@ -1,4 +1,3 @@
-
 import "./App.css";
 import {
   QueryClient,
@@ -17,10 +16,12 @@ function App() {
     <>
       <QueryClientProvider client={queryClient}>
         <Router>
-          <Navbar></Navbar>
-          <div className="bg-grey-500 mx-auto py-6 sm:px-6 lg:px-8">
-            <Route path="/list" component={SneakersList}></Route>
-            <Route path="/dashboard" component={Dashboard}></Route>
+          <div className="flex h-screen">
+            <Navbar></Navbar>
+            <div className="mx-auto py-6 sm:px-6 lg:px-8 h-screen overflow-auto">
+              <Route path="/list" component={SneakersList}></Route>
+              <Route path="/dashboard" component={Dashboard}></Route>
+            </div>
           </div>
         </Router>
       </QueryClientProvider>

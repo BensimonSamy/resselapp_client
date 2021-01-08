@@ -1,5 +1,6 @@
 export type Props = {
     onClose: () => void
     onValidate: () => void,
-    isClosing: boolean
+    isClosing: boolean,
+    title: string
 }

@@ -1,6 +1,6 @@
 import { Props } from './index.d'
 
-const CautionModal = ({ onClose, onValidate, isClosing }: Props) => {
+const CautionModal = ({ onClose, onValidate, isClosing, title }: Props) => {
 
     return (
         <div className="fixed z-10 inset-0 overflow-y-auto">
@@ -18,7 +18,7 @@ const CautionModal = ({ onClose, onValidate, isClosing }: Props) => {
                                 </svg>
                             </div>
                             <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                                <h3 className="text-lg leading-6 font-medium text-gray-900" id="modal-headline">Êtes-vous sûr ?</h3>
+                                <h3 className="text-lg leading-6 font-medium text-gray-900" id="modal-headline">{title}</h3>
                                 <div className="mt-2">
                                     <p className="text-sm text-gray-500">Cette action est irréversible</p>
                                 </div>

@@ -3,15 +3,17 @@ import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEuroSign } from '@fortawesome/free-solid-svg-icons';
 
-import { useMutation, useQueryClient } from 'react-query';
+import { useMutation, useQuery, useQueryClient } from 'react-query';
 
-import { Sneaker, Props } from './index.d'
+import { Sneaker, Props, Size } from './index.d'
 
-import { addSneaker, updateSneaker } from '../../api';
+import { addSneaker, updateSneaker } from '../../api/sneakers';
+import { getSizes } from '../../api/size'
 
 const Form = ({ onClose, defaultValues }: Props) => {
     const { register, errors, handleSubmit, watch, setValue } = useForm<Sneaker>({ defaultValues });
     const queryClient = useQueryClient()
+    const { data: sizes } = useQuery<Size[]>('getSizes', async () => (await (await getSizes()).json()))
 
     const { already_buy } = watch()
 
@@ -76,14 +78,16 @@ const Form = ({ onClose, defaultValues }: Props) => {
                 </div>
                 <div className="flex flex-col">
                     <label className="text-gray-600 font-light">Taille</label>
-                    <input
-                        className="w-full px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-green-500"
-                        type="number"
-                        id="size"
+                    <select
+                        className="w-full border bg-white rounded px-3 py-2 outline-none"
                         placeholder="Taille"
                         name="size"
-                        ref={register({ required: true })}
-                    />
+                        ref={register({ required: true })}>
+                        <option className="py-1" value=""></option>
+                        {sizes?.map((size: Size) => (
+                            <option key={size._id} className="py-1" value={size.us}>{`${size.us} US - ${size.eu} EU`}</option>
+                        ))}
+                    </select>
                     {errors.size && requiredField()}
                 </div>
                 <div className="flex flex-col col-span-full">

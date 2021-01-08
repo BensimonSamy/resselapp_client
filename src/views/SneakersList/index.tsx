@@ -3,7 +3,7 @@ import { useMutation, useQuery, useQueryClient } from 'react-query'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faEuroSign, faPencilAlt, faTrash } from "@fortawesome/free-solid-svg-icons";
 
-import { getSneakers, deleteSneaker } from '../../api';
+import { getSneakers, deleteSneaker } from '../../api/sneakers';
 
 import Form from '../../components/Form';
 import Modal from '../../components/common/Modal';
@@ -116,6 +116,7 @@ const SneakersList = (): JSX.Element => {
                 )}
                 {isOpenCautionModal && (
                     <CautionModal
+                        title="Êtes-vous sûr de vouloir supprimer cette paire ?"
                         isClosing={isClosingModal}
                         onClose={() => {
                             setIsClosingModal(true)
