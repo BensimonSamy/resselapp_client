@@ -1,0 +1,12 @@
+nav {
+    padding: 10px 0px;
+    /* height: 80px; */
+    justify-content: center;
+    background-color: transparent;
+    transition: all 500ms ease 0s;
+    top: 0px;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+}

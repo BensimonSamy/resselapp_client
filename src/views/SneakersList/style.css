@@ -1,0 +1,39 @@
+.card-header {
+    clip-path: ellipse(80% 34% at 138% 18%);
+}
+
+.open-animation {
+    transition: top 0.4s, opacity 0.4s;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: .5s;
+    animation-name: animatebottom;
+    animation-duration: .5s
+    }
+    @-webkit-keyframes animatebottom {
+      0% { transform: translateY(150%) } 
+      80% { transform: translateY(-5%) } 
+      100% { transform: translateY(0%) } 
+    }
+    @keyframes animatebottom { 
+      0% { transform: translateY(150%) } 
+      80% { transform: translateY(-5%) } 
+      100% { transform: translateY(0%) } 
+    }
+  
+    .close-animation {
+      transition: top 0.4s, opacity 0.4s;
+      -webkit-animation-name: animateTop;
+      -webkit-animation-duration: .5s;
+      animation-name: animateTop;
+      animation-duration: .5s
+    }
+    @-webkit-keyframes animateTop {
+      0% { transform: translateY(0%) }  
+      20% { transform: translateY(-5%) }  
+      100% { transform: translateY(200%) } 
+    }
+    @keyframes animateTop { 
+      0% { transform: translateY(0%) } 
+      20% { transform: translateY(-5%) }  
+      100% { transform: translateY(200%) } 
+    }

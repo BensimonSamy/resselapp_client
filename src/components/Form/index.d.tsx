@@ -10,4 +10,10 @@ export interface Sneaker {
     ressel_price: number,
     sale_date: string,
     purchase_date: string,
+    already_buy: boolean
+}
+
+export interface Props {
+    onClose: () => void,
+    defaultValues?: Sneaker
 }

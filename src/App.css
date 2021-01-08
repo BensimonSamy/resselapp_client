@@ -1,1 +1,23 @@
-
+body {
+    color: #1D1148;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: normal;
+    background-position: 50% 50%;
+    position: absolute;
+    left: 0px;
+    top: 80px;
+    max-height: 960px;
+    min-height: initial;
+    width: 100vw;
+    max-width: 100%;
+    z-index: 0;
+    background-image: radial-gradient(circle at 0% 100%, rgb(155, 110, 210) 0%, rgb(155, 110, 210) 10%, rgba(255, 255, 255, 0) 30%, transparent), radial-gradient(circle at 0% 0%, rgb(221, 99, 147) 30%, rgba(255, 255, 255, 0), transparent), radial-gradient(circle at 50% 100%, rgb(249, 161, 85) 0%, rgb(249, 161, 85) 30%, rgba(255, 255, 255, 0), transparent), radial-gradient(at 60% 5%, rgb(234, 112, 207) 0%, rgb(234, 112, 207) 10%, rgba(255, 255, 255, 0), transparent), linear-gradient(280deg, rgb(98, 218, 251) 0%, rgb(98, 218, 251) 30%, rgba(255, 255, 255, 0));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
